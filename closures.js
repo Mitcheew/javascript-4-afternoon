@@ -159,11 +159,13 @@ var module = (function () {
   // outside our lexical scope
   return {
     // Code here.
-    
+    publicMethod: function(){
+      return privateMethod();
+    }
   };
 })();
 
-
+module.publicMethod();
 
 ////////// PROBLEM 7 //////////
 
@@ -179,6 +181,14 @@ function secretNumber() {
 
   return {
     // Code here
+    addToSecret: function(value) {
+      secret +=value
+      return secret
+    },
+    takeAwayFromSecret: function(value) {
+      secret -=value
+      return secret
+    }
   };
 }
 
